@@ -32,3 +32,5 @@
 
  <p>첫째 줄에 게임의 상금을 출력 한다.</p>
 
+### 메모
+https://ggcoding.tistory.com/67
