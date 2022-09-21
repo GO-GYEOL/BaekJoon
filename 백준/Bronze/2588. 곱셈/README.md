@@ -25,8 +25,6 @@
 ### 출력 
 
  <p>첫째 줄부터 넷째 줄까지 차례대로 (3), (4), (5), (6)에 들어갈 값을 출력한다.</p>
- <br/>
  <hr/>
- <br/>
 ## 메모
 <p> const B = new Array()로 만들고, for(i=0; i<data.length; i++){B.push(data[1].charAt(i)} 을 이용해 문제 해결할 수도 있겠다.
