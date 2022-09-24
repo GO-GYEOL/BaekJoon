@@ -3,7 +3,6 @@ const [info, arr] = require('fs').readFileSync('dev/stdin').toString().split('\n
 const newArr = arr.split(" ").map((i) => +i);
 const newInfo = info.split(" ").map((i) => +i);
 const newArr2 = newArr.filter((i) => i < newInfo[1]);
-const newArr3 = newArr2.map(i => `${i}`);
-const newArr4 = newArr3.join(' ')
-console.log(newArr4)
+const newArrLast = newArr2.join(' ');
+console.log(newArrLast)
 
