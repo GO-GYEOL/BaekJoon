@@ -1,7 +1,12 @@
-const [testCase, ...text] = require('fs').readFileSync('dev/stdin').toString().trim().split('\n');
-let score = 0;
-let cnt = 0;
+const [testCase, ...text] = require("fs")
+  .readFileSync("dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+
 for (i = 0; i < text.length; i++) {
+  let score = 0;
+  let cnt = 0;
   for (j = 0; j < text[i].length; j++) {
     if (text[i][j] === "O") {
       cnt++;
@@ -11,6 +16,4 @@ for (i = 0; i < text.length; i++) {
     }
   }
   console.log(score);
-  score = 0;
-  cnt = 0;
 }
