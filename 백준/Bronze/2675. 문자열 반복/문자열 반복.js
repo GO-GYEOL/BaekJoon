@@ -1,19 +1,12 @@
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+const [tc, ...arr] = require('fs').readFileSync('dev/stdin').toString().trim().split('\n');
 
-let caseCount = Number(input[0]);
-let result = '';
-
-for (let i = 1; i <= caseCount; i++) {
-  let count = Number(input[i].split(' ')[0]); 
-  let cases = input[i].split(' ')[1]; 
-  
-  for (let j = 0; j < cases.length; j++) {
-    for (let k = 0; k < count; k++) {
-      result += cases[j];
+for(i=0; i<arr.length; i++){
+    const [num, string] = arr[i].split(' ')
+    let stringArr = [];
+    for(j=0; j<string.length; j++){
+        stringArr.push(string[j].repeat(num));
     }
-  }
-  result += '\n';
+    const newArr = stringArr.join('');
+    console.log(newArr);
 }
-
-console.log(result);
+                                                                                     
