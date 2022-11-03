@@ -1,34 +1,24 @@
-let [testCase, numbers] = require('fs').readFileSync('dev/stdin').toString().trim().split('\n');
-testCase = +testCase;
-numbers = numbers.split(" ").map((i) => +i);
+const input = require('fs').readFileSync('dev/stdin').toString().trim().split('\n');
+let test = +input.shift();
+let arr = input.shift().split(" ").map(Number);
 let count = 0;
 
-for (j = 0; j < testCase; j++) {
-  let number = numbers[j];
-  if (number === 1) continue;
-  if (number === 2) {
+arr.forEach((i) => {
+  if (calSoSoo(i)) {
     count++;
-    continue;
-  } else {
-    for (i = 2; i <= Math.ceil(Math.sqrt(number)); i++) {
-      if (i === Math.ceil(Math.sqrt(number))) {
-        if (number % i !== 0) {
-          count++;
-          break;
-        }
-        if(number % i === 0){
-          break;
-        }
-      }
-      if (number % i === 0) {
-        break;
-      } 
-      else {
-        continue;
-      }
+  }
+});
+
+function calSoSoo(n) {
+  if (n === 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
     }
   }
+  return true;
 }
 
-console.log(count);
-
+console.log(count)
